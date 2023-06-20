@@ -52,14 +52,15 @@ function Login({navigation}) {
       };
 
     return(
-        isLoading ? <View style={{
-            flex: 1,
-            justifyContent: 'center',
-            backgroundColor: Constants.COLOR.green
-        }}>
-            <ActivityIndicator size={50} color={Constants.COLOR.white}/>
-        </View>
-        : <View>
+        // isLoading ? <View style={{
+        //     flex: 1,
+        //     justifyContent: 'center',
+        //     backgroundColor: Constants.COLOR.green
+        // }}>
+        //     <ActivityIndicator size={50} color={Constants.COLOR.white}/>
+        // </View>
+        // : 
+        <View>
             <Image
                 source={require('../images/background2.png')}
                 style={{height: '35%', width: '100%'}}>
@@ -97,7 +98,7 @@ function Login({navigation}) {
                     />
                 </KeyboardAvoidingView>
                 
-                <TouchableOpacity onPress={handleLogin} 
+                <TouchableOpacity onPress={()=>{navigation.navigate('BottomTabNavigator')}} 
                     style={{
                     backgroundColor: Constants.COLOR.white,
                     elevation: 8,
