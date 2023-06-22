@@ -4,7 +4,6 @@ import {
   Dimensions,
   Text,
   Image,
-  AsyncStorage,
   ScrollView,
   SafeAreaView,
   StyleSheet,
@@ -12,6 +11,7 @@ import {
   TouchableOpacity,
   Alert,
 } from "react-native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import Constants from "../../utilities/Constants";
 import FontLoader from "../../utilities/Font";
 import Moment from "moment";
@@ -207,7 +207,7 @@ function Profile({ navigation }) {
                 >
                   <IconButtonDesign
                     onPress={() => {
-                      navigation.pop();
+                      // navigation.pop();
                       navigation.navigate("EditScreen", {
                         fullname: info.fullname,
                         mail: info.mail,

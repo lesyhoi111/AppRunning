@@ -1,9 +1,11 @@
 import React from "react";
-import { StyleSheet, View, Text, TouchableOpacity, AsyncStorage, Alert } from "react-native";
+import { useFocusEffect } from '@react-navigation/native';
+import { StyleSheet, View, Text, TouchableOpacity, Alert } from "react-native";
 import MapView, { Marker, Polyline, PROVIDER_GOOGLE } from "react-native-maps";
-import { NavigationEvents } from 'react-navigation';
+// import { NavigationEvents } from 'react-navigation';
 import haversine from "haversine";
 import moment from 'moment';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { FontAwesome5, FontAwesome, MaterialIcons, Entypo } from '@expo/vector-icons';
 import {Picker} from '@react-native-picker/picker';
 import * as Location from 'expo-location';
@@ -79,6 +81,15 @@ export default class GeofenceTab extends React.Component {
     clearInterval(this.timer);
   }
 
+  componentDidMount() {
+    this.didFocus();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.region !== this.state.region) {
+      this.didFocus();
+    }
+  }
   // Tracking
 
   didFocus = async () => {
@@ -401,7 +412,7 @@ export default class GeofenceTab extends React.Component {
     const timer = now - start;
 
     if (!this.state.region) {
-      return <NavigationEvents onDidFocus={this.didFocus} />;
+      return null
     }
 
     return (

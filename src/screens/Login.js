@@ -7,8 +7,11 @@ import TextInputDesign from '../components/TextInputDesign';
 import Constants from '../utilities/Constants';
 // import Axios from "axios";
 import AppLoading from './AppLoading';
+import { SafeAreaView } from 'react-navigation';
+import { paddingBottom } from 'styled-system';
 
 const windowHeight = Dimensions.get('window').height;
+const windowWidth = Dimensions.get('window').width;
 
 function Login({navigation}) {
     const [username,setUsername] = useState()
@@ -52,95 +55,94 @@ function Login({navigation}) {
       };
 
     return(
-        // isLoading ? <View style={{
-        //     flex: 1,
-        //     justifyContent: 'center',
-        //     backgroundColor: Constants.COLOR.green
-        // }}>
-        //     <ActivityIndicator size={50} color={Constants.COLOR.white}/>
-        // </View>
-        // : 
-        <View>
-            <Image
-                source={require('../images/background2.png')}
-                style={{height: '35%', width: '100%'}}>
-            </Image>
-            <KeyboardAvoidingView style={{
-                position: 'absolute', 
+        
+        <SafeAreaView style={{backgroundColor:Constants.COLOR.black,height:windowHeight}}>
+            
+            <View style={{
+                height:windowHeight/3,
+                justifyContent:'center',
+                paddingLeft:20
             }}>
                 <Text style={{
                     fontFamily: 'SemiBold', 
-                    fontSize: 70,
+                    fontSize: 40,
                     color: Constants.COLOR.white,
-                    marginLeft: 12,
-                    marginTop: 92,}}
-                >SIGN IN</Text>
-            </KeyboardAvoidingView>
+                    }}
+                >Hello,</Text>
+                <Text style={{
+                    fontFamily: 'SemiBold', 
+                    fontSize: 40,
+                    color: Constants.COLOR.white,
+                    }}
+                >Welcome back</Text>
+            </View>
         
             <View style={{
-                backgroundColor: Constants.COLOR.green,
-                height: '65%', width: '100%',
-                alignSelf: 'center',
+                height: (windowHeight*2+100)/3,
+                width: windowWidth,
+                backgroundColor:Constants.COLOR.black
             }}>
-                <KeyboardAvoidingView>
+                
                     <TextInputDesign
                         placeholder='Username'
                         iconName='user-alt'
                         isSecured={false}
                         onChangeText={(text) => setUsername(text)}
                     />
-                    
-                    <TextInputDesign
-                        placeholder='Password'
-                        iconName='key'
-                        isSecured={true}
-                        onChangeText={(text)=>setPassword(text)}
-                    />
-                </KeyboardAvoidingView>
+                    <View style={{marginTop:30}}>
+                        <TextInputDesign
+                            placeholder='Password'
+                            iconName='key'
+                            isSecured={true}
+                            onChangeText={(text)=>setPassword(text)}
+                        />
+                    </View>
                 
                 <TouchableOpacity onPress={()=>{navigation.navigate('BottomTabNavigator')}} 
                     style={{
-                    backgroundColor: Constants.COLOR.white,
+                    backgroundColor: Constants.COLOR.green,
                     elevation: 8,
                     alignItems: 'center',
                     borderRadius: 25,
-                    marginHorizontal: 25,
+                    marginHorizontal: 80,
                     justifyContent: 'center',
-                    paddingVertical: 4,
-                    marginTop: 20
+                    height:48,
+                    marginTop: 50
                     }}>
                     <FontLoader>
                         <Text style={{
-                            color: Constants.COLOR.green,
-                            fontSize: 35,
+                            color: Constants.COLOR.white,
+                            fontSize: 19,
                             fontFamily: 'SemiRegular',
+                            fontWeight:'bold',
                             alignSelf: 'center',}}
-                        >Sign In</Text>
+                        >SIGN IN</Text>
                     </FontLoader>  
                 </TouchableOpacity>
-
+                <View style={{flex:1}}></View>
                 <View style={{
-                    marginTop: 20,
                     flexDirection: 'row', 
                     justifyContent: 'center', 
-                    alignItems: 'center' 
+                    alignItems: 'center' ,
+                    paddingBottom:20
                 }}>
                     <FontLoader>
                         <Text style={{
                             fontSize: 21,
                             fontFamily: 'SemiRegular',
+                            color: Constants.COLOR.white,
                         }}>Don't have account? </Text>
                     </FontLoader> 
                     <TouchableOpacity onPress={() => navigation.navigate('Register')}>
                         <Text style={{
                             fontSize: 22,
                             fontFamily: 'SemiRegular',
-                            color: Constants.COLOR.red,
+                            color: Constants.COLOR.white,
                         }}>Sign up now! </Text>
                     </TouchableOpacity>
                 </View>
             </View>
-        </View>
+        </SafeAreaView>
     )
 }
 

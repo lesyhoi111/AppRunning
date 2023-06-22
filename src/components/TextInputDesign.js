@@ -3,7 +3,7 @@ import { KeyboardAvoidingView, TextInput } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 
 const heightOfView = 48;
-const fontSizeOfText = 22;
+const fontSizeOfText = 19;
 const sizeOfIcon = 25;
 
 const TextInputDesign = ({
@@ -20,14 +20,14 @@ const TextInputDesign = ({
         flexDirection: "row",
         alignItems: "center",
         marginHorizontal: 25,
-        marginTop: 12,
+        marginTop: 20,
         paddingHorizontal: 10,
         borderRadius: 30,
         paddingVertical: 2,
         height: heightOfView,
       }}
     >
-      <FontAwesome5 name={iconName} color="#4CD964" size={sizeOfIcon} />
+      <FontAwesome5 name={iconName} color="#8EBBFF" size={sizeOfIcon} />
       <TextInput
         onEndEditing={onEndEditing}
         onChangeText={onChangeText}
@@ -48,14 +48,14 @@ const TextInputDesign = ({
         flexDirection: "row",
         alignItems: "center",
         marginHorizontal: 25,
-        marginTop: 12,
+        marginTop: 20,
         paddingHorizontal: 10,
         borderRadius: 30,
         paddingVertical: 2,
         height: heightOfView,
       }}
     >
-      <FontAwesome5 name={iconName} color="#4CD964" size={sizeOfIcon} />
+      <FontAwesome5 name={iconName} color="#8EBBFF" size={sizeOfIcon} />
       <TextInput
         onEndEditing={onEndEditing}
         onChangeText={onChangeText}

@@ -4,11 +4,13 @@ import { createAppContainer } from 'react-navigation';
 // import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
-import  ProfileTab from './Tabs/ProfileTab/Navigator';
+// import  ProfileStack from './Tabs/ProfileTab/ProfileStack';
+import  Profile from '../components/TopTabbar/Profile';
 import Constants from '../utilities/Constants';
-import NutritionTabNavigator from './Tabs/NutritionTab/Navigator';
-import GeofenceTabNavigator from './Tabs/GeofenceTab/Navigator';
-import PlansTabNavigator from './Tabs/PlansTab/Navigator';
+// import NutritionTabNavigator from './Tabs/NutritionTab/Navigator';
+// import GeofenceTabNavigator from './Tabs/GeofenceTab/Navigator';
+import GeofenceTab from './Tabs/GeofenceTab/GeofenceTab';
+// import PlansTabNavigator from './Tabs/PlansTab/Navigator';
 
 const windowHeight = Dimensions.get('window').height;
 
@@ -18,27 +20,26 @@ function BottomTabNavigator() {
   
   return (
     
-    <Tab.Navigator initialRouteName="PlansTabNavigator"  screenOptions={{
+    <Tab.Navigator initialRouteName="Profile"  screenOptions={{
         tabBarShowLabel:false,
         headerShown:false,
-        inactiveTintColor: Constants.COLOR.second_green,
-        activeTintColor: Constants.COLOR.white,
+        tabBarActiveTintColor: Constants.COLOR.green,
+        tabBarInactiveTintColor: Constants.COLOR.second_green,
         tabBarStyle:{
           height: 50,
-          backgroundColor: Constants.COLOR.green,
-          borderTopWidth: 0,
+          backgroundColor: Constants.COLOR.black,
           elevation: 8
         }
     }}>
-      <Tab.Screen name="PlansTabNavigator" component={PlansTabNavigator} options={{
+      {/* <Tab.Screen name="PlansTabNavigator" component={PlansTabNavigator} options={{
           tabBarLabel: 'Plan',
           tabBarIcon: ({ tintColor }) => {
               return <MaterialCommunityIcons name="home-outline" 
               size={30} style={{color: tintColor}} />
           },
-        }}/>
+        }}/> */}
 
-      <Tab.Screen name="GeofenceTabNavigator" component={GeofenceTabNavigator}  options={{
+      <Tab.Screen name="GeofenceTab" component={GeofenceTab}  options={{
           tabBarLabel: 'Record',
           tabBarIcon: ({ tintColor }) => {
             return <MaterialCommunityIcons name="record-circle-outline" 
@@ -46,14 +47,14 @@ function BottomTabNavigator() {
           },
         }} />
 
-      <Tab.Screen name="NutritionTabNavigator" component={NutritionTabNavigator}  options={{
+      {/* <Tab.Screen name="NutritionTabNavigator" component={NutritionTabNavigator}  options={{
           tabBarLabel: 'Nutrition',
           tabBarIcon: ({ tintColor }) => {
             return <MaterialCommunityIcons name="nutrition" 
             size={28} style={{color: tintColor}} />
         },
-        }} />
-        <Tab.Screen name="ProfileTab" component={ProfileTab} options={{
+        }} /> */}
+        <Tab.Screen name="Profile" component={Profile} options={{
           tabBarLabel: 'You',
           tabBarIcon: ({ tintColor }) => {
             return <AntDesign name='user' 

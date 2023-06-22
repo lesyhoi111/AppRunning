@@ -115,6 +115,10 @@ import Register from './src/screens/Register'
 import BottomTabNavigator from './src/screens/BottomTabNavigator'
 import AppLoading from './src/screens/AppLoading'
 import ChangePassScreen from './src/screens/ChangePassScreen'
+import GeofenceTab from './src/screens/Tabs/GeofenceTab/GeofenceTab';
+import SaveActivityScreen from './src/screens/Tabs/GeofenceTab/SaveActivityScreen';
+import EditScreen from './src/screens/Tabs/ProfileTab/EditScreen';
+import Profile from './src/components/TopTabbar/Profile'
 
 function HomeScreen(props) {
   return (
@@ -142,7 +146,13 @@ function App() {
       <Stack.Navigator initialRouteName="Welcome" screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="ChangePassScreen" component={ChangePassScreen} />
+        <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="BottomTabNavigator" component={BottomTabNavigator} />
+        <Stack.Screen name="GeofenceTab" component={GeofenceTab} />
+        <Stack.Screen name="SaveActivityScreen" component={SaveActivityScreen} />
+        <Stack.Screen name="EditScreen" component={EditScreen} />
+        <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
   );

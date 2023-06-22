@@ -14,7 +14,7 @@ import {
 import FontLoader from "../../utilities/Font";
 import Constants from "../../utilities/Constants";
 import Activities from "./Activities";
-import ProfileTabNavigator from "../../screens/Tabs/ProfileTab/Navigator";
+import ProfileTabNavigator from "../../screens/Tabs/ProfileTab/ProfileStack";
 import Progress from "./Progress";
 
 const windowHeight = Dimensions.get("window").height;

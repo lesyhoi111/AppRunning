@@ -123,12 +123,12 @@ function ValidUser(username) {
             <View style={{
                 height: '100%', 
                 width: '100%',
-                backgroundColor: Constants.COLOR.green,
+                backgroundColor:Constants.COLOR.black,
                 overflow: 'scroll'
             }}>
                 <View style={{
                     paddingTop: windowHeight/24,
-                    paddingHorizontal: 12,
+                    paddingHorizontal: 0,
                     flexDirection: 'column',
                     
                 }}>
@@ -141,7 +141,7 @@ function ValidUser(username) {
                 <ScrollView style={{
                     paddingVertical: 4
                 }}>
-                    <View style={{flexDirection:'row'}}>
+                    <View style={{flexDirection:'row', marginBottom:30}}>
                         <View style={{
                             width: '75%',
                             paddingLeft: 8
@@ -211,21 +211,22 @@ function ValidUser(username) {
                     
                     <TouchableOpacity onPress={handleRegister}  
                         style={{
-                        backgroundColor: Constants.COLOR.white,
-                        elevation: 8,
-                        alignItems: 'center',
-                        borderRadius: 25,
-                        marginHorizontal: 25,
-                        justifyContent: 'center',
-                        paddingVertical: 4,
-                        marginTop: 20
-                        }}>
+                            backgroundColor: Constants.COLOR.green,
+                            elevation: 8,
+                            alignItems: 'center',
+                            borderRadius: 25,
+                            marginHorizontal: 80,
+                            justifyContent: 'center',
+                            height:48,
+                            marginTop: 50
+                            }}>
                         <FontLoader>
                             <Text style={{
-                                color: Constants.COLOR.green,
-                                fontSize: 35,
-                                fontFamily: 'SemiRegular',
-                                alignSelf: 'center',}}
+                            color: Constants.COLOR.white,
+                            fontSize: 19,
+                            fontFamily: 'SemiRegular',
+                            fontWeight:'bold',
+                            alignSelf: 'center',}}
                             >Sign Up</Text>
                         </FontLoader>  
                     </TouchableOpacity>

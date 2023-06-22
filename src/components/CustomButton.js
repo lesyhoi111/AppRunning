@@ -9,7 +9,7 @@ const CustomButton = ({
   iconName,
   iconSize = 28,
   backgroundColor = "transperant",
-  color = Constants.COLOR.dark_green,
+  color = Constants.COLOR.green,
 }) => {
   return (
     <TouchableOpacity
